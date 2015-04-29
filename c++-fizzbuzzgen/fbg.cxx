@@ -3,12 +3,11 @@
 #include <cstdlib>
 
 void bestbuzz(std::ostream& os, const int& num) {
-    os << "#include <iostream>" << std::endl << std::endl << "int main() {" << 
-        std::endl << "\tfor (int i = 1; i <= " << num << "; ++i) {" << std::endl;
+    os << "#include <iostream>\nint main() {\n\tfor (int i = 1; i <= " << num << "; ++i) {\n";
     for (int i = 1; i <= num; ++i) {
         bool fizz = i%3 == 0;
         bool buzz = i%5 == 0;
-        os << "\t\tif (i==" << i << ") {" << std::endl;
+        os << "\t\tif (i==" << i << ") {\n";
         if (fizz && buzz)
             os << "\t\t\tstd::cout << \"fizzbuzz\" << std::endl;";
         else if (fizz)
@@ -17,9 +16,9 @@ void bestbuzz(std::ostream& os, const int& num) {
             os << "\t\t\tstd::cout << \"buzz\" << std::endl;";
         else
             os << "\t\t\tstd::cout << " << i << " << std::endl;";
-        os << std::endl << "\t\t}" << std::endl;
+        os << "\n\t\t}\n";
     }
-    os << "\t}" << std::endl << "\treturn 0;" << std::endl << "}";
+    os << "\t}\n\treturn 0;\n}";
 }
 
 int main(int argc, char *argv[]) {
